@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+
+    android:orientation="vertical" >
+
+    <TextView
+
+        android:id="@+id/textView1"
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+
+        android:gravity="center_horizontal"
+
+        android:text="@string/Text_color" />
+
+    <RadioGroup
+
+        android:id="@+id/rgColor"
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content" >
+
+        <RadioButton
+
+            android:id="@+id/radioRed"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+            android:background="@color/red"
+
+            android:checked="true"/>
+
+        <RadioButton
+
+            android:id="@+id/radioGreen"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+            android:background="@color/green"
+
+            />
+
+        <RadioButton
+
+            android:id="@+id/radioBlue"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+            android:background="@color/blue"/>
+
+    </RadioGroup>
+
+    <TextView
+
+        android:id="@+id/textView2"
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+
+        android:gravity="center_horizontal"
+
+        android:text="@string/Backgr" />
+
+    <RadioGroup
+
+        android:id="@+id/rgBack"
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content" >
+
+        <RadioButton
+
+            android:id="@+id/radioBack1"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+            android:background="@drawable/fon1_1"
+
+            android:checked="true"/>
+
+        <RadioButton
+
+            android:id="@+id/radioBack2"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+            android:background="@drawable/fon2_1"/>
+
+    </RadioGroup>
+
+    <Button
+
+        android:id="@+id/btApply"
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+
+        android:text="OK"
+
+        android:onClick="onApply" />
+
+</LinearLayout>

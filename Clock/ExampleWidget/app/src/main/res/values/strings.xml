@@ -1,0 +1,37 @@
+<resources>
+
+    <string name="app_name">DigitClock</string>
+
+    <string name="label_widget">DigitClock</string>
+
+    <string name="Jan">Января</string>
+
+    <string name="Feb">Февраля</string>
+
+    <string name="Mar">Марта</string>
+
+    <string name="Apr">Апреля</string>
+
+    <string name="May">Мая</string>
+
+    <string name="Jun">Июня</string>
+
+    <string name="Jul">Июля</string>
+
+    <string name="Aug">Августа</string>
+
+    <string name="Sep">Сентября</string>
+
+    <string name="Okt">Октября</string>
+
+    <string name="Nov">Ноября</string>
+
+    <string name="Dec">Декабря</string>
+
+    <string name="Text_color">Цвет текста</string>
+
+    <string name="Backgr">Фон</string>
+
+
+
+</resources>
