@@ -1,0 +1,87 @@
+apply plugin: 'com.android.application'
+import java.util.regex.Pattern
+android {
+    signingConfigs {
+        config {
+            keyAlias 'Sofon'
+            keyPassword 'Sofon96321478'
+            storeFile file('C:/Users/Sofon/Desktop/Sofon1.jks')
+            storePassword 'Sofon96321478'
+        }
+        useLibrary 'org.apache.http.legacy'
+    }
+    compileSdkVersion 23
+    buildToolsVersion '23.0.3'
+    defaultConfig {
+        applicationId "com.krabd.klient"
+        minSdkVersion 14
+        targetSdkVersion 17
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_7
+            targetCompatibility JavaVersion.VERSION_1_7
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+            signingConfig signingConfigs.config
+            zipAlignEnabled true
+        }
+        debug {
+        }
+    }
+}
+
+
+
+android {
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/dependencies.txt'
+        exclude 'META-INF/LGPL2.1'
+
+    }
+}
+
+task('increaseVersionCode') << {
+    def manifestFile = file("C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\src\\main\\AndroidManifest.xml")
+    def pattern = Pattern.compile("versionCode=\"(\\d+)\"")
+    def manifestText = manifestFile.getText()
+    def matcher = pattern.matcher(manifestText)
+    matcher.find()
+    def versionCode = Integer.parseInt(matcher.group(1))
+    def manifestContent = matcher.replaceAll("versionCode=\"" + ++versionCode + "\"")
+    manifestFile.write(manifestContent)
+}
+
+tasks.whenTaskAdded { task ->
+    if (task.name == 'generateReleaseBuildConfig') {
+        task.dependsOn 'increaseVersionCode'
+    }
+}
+
+dependencies {
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.android.support:design:23.4.0'
+
+    compile files('libs/universal-image-loader-1.9.3.jar')
+
+    compile 'io.realm:realm-android:0.87.5' // dependency for realm-database API (http://realm.io)
+    compile 'com.github.PhilJay:MPAndroidChart:v2.2.0'
+
+}
+repositories {
+    maven { url "https://jitpack.io" }
+}
+dependencies {
+    compile 'com.github.PhilJay:MPAndroidChart:v2.2.5'
+}
+

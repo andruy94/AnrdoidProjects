@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "D:\\Android\\Diplom-444\\app\\build\\intermediates\\res\\merged\\debug\\raw\\test",
+        "source": "D:\\Android\\Diplom-444\\app\\src\\main\\res\\raw\\test"
+    },
+    {
+        "merged": "D:\\Android\\Diplom-444\\app\\build\\intermediates\\res\\merged\\debug\\raw\\pass",
+        "source": "D:\\Android\\Diplom-444\\app\\src\\main\\res\\raw\\pass"
+    },
+    {
+        "merged": "D:\\Android\\Diplom-444\\app\\build\\intermediates\\res\\merged\\debug\\raw\\testvopr",
+        "source": "D:\\Android\\Diplom-444\\app\\src\\main\\res\\raw\\testvopr"
+    }
+]
