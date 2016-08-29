@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">SulfurCalc</string>
+    <string name="tv1">Тип почвы</string>
+    <string name="tv2">Содержание подвижной сульфатной серы(мг/кг)</string>
+    <string name="tv3">Культура</string>
+    <string name="tv4">Урожайность(т/га)</string>
+    <string name="tv5">Гранулометрический состав почвы</string>
+    <string name="tv6">Регион</string>
+    <string name="tv7">Количество органических удобрений(т/га)</string>
+    <string name="tv8">Время вноса органических удобрений</string>
+    <string name="head1">Имя</string>
+    <string name="head2">Внесено</string>
+    <string name="head3">Внесено (кг/га)</string>
+    <string name="head4">Будет вноситься</string>
+</resources>
