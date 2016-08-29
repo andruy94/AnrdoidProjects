@@ -11,27 +11,29 @@ import java.util.List;
 public class Rebus {
     @SerializedName("id")//Анотация для Сериализации
     @Expose
-    private List<String> Pic_id;
-
-    @SerializedName("Answer")
-    @Expose
-    private List<String> Answer;
-
-    @SerializedName("Hint")
-    @Expose
-    private List<String> Hint;
+    private List<Integer> Pic_id;
 
     @SerializedName("Url")
     @Expose
     private List<String> Url;
 
-    @SerializedName("Points")
+    @SerializedName("Answer")
     @Expose
-    private List<String> Points;
+    private List<String> Answer;
 
     @SerializedName("Name")
     @Expose
     private List<String> FileName;
+
+    @SerializedName("Points")
+    @Expose
+    private List<Integer> Points;
+
+    @SerializedName("Hint")
+    @Expose
+    private List<String> Hint;
+
+
 
     @Override
     public String toString() {
@@ -47,11 +49,11 @@ public class Rebus {
                 FileName;
     }
 
-    public List<String> getPic_id() {
+    public List<Integer> getPic_id() {
         return Pic_id;
     }
 
-    public void setPic_id(List<String> pic_id) {
+    public void setPic_id(List<Integer> pic_id) {
         Pic_id = pic_id;
     }
 
@@ -79,11 +81,11 @@ public class Rebus {
         Url = url;
     }
 
-    public List<String> getPoints() {
+    public List<Integer> getPoints() {
         return Points;
     }
 
-    public void setPoints(List<String> points) {
+    public void setPoints(List<Integer> points) {
         Points = points;
     }
 

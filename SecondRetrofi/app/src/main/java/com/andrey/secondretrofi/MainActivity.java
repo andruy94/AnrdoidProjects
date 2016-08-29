@@ -9,23 +9,17 @@ import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.andrey.secondretrofi.interfaces.AuthEndpoint;
 import com.andrey.secondretrofi.models.AnswerTest;
-import com.andrey.secondretrofi.models.ApiRequest;
+import com.andrey.secondretrofi.models.ApiRequest2;
 import com.andrey.secondretrofi.models.Rebus;
 import com.andrey.secondretrofi.retrofit.ServiceGenerator;
 import com.andrey.secondretrofi.retrofit.ServiceGenerator2;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import okhttp3.MediaType;
-import okhttp3.RequestBody;
-import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -76,16 +70,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
 
-
-        ServiceGenerator2.getInstance().getAnswerTest(new AnswerTest("andruy94")).enqueue(new Callback<AnswerTest>() {
+    List<Integer> pics_id=new ArrayList<Integer>(1);
+        pics_id.add(1);
+        List<Integer> points=new ArrayList<Integer>(1);
+        points.add(666);
+        ServiceGenerator.getInstance().getAnswerTest(new ApiRequest2(
+                "Admin",
+                "123456789",
+                pics_id,
+              points
+        )
+        ).enqueue(new Callback<Rebus>() {
             @Override
-            public void onResponse(Call<AnswerTest> call, Response<AnswerTest> response) {
-                Log.e("TAG",response.body().login);
+            public void onResponse(Call<Rebus> call, Response<Rebus> response) {
+                Log.e("TAG",response.body().toString());
             }
 
             @Override
-            public void onFailure(Call<AnswerTest> call, Throwable t) {
-                Log.e("TAG",t.toString());
+            public void onFailure(Call<Rebus> call, Throwable t) {
+                Log.e("TAG",t.toString()+ t.getMessage());
             }
         });
     }

@@ -1,27 +1,41 @@
 package com.andrey.secondretrofi.retrofit;
 
 
-import android.util.Log;
+import com.andrey.secondretrofi.models.AnswerTest;
+import com.andrey.secondretrofi.models.ApiRequest2;
+import com.andrey.secondretrofi.models.Rebus;
 
-import okhttp3.OkHttpClient;
-import okhttp3.logging.HttpLoggingInterceptor;
+import java.util.List;
+
+import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.http.Body;
+import retrofit2.http.POST;
 
 public class ServiceGenerator {
 
-    private static OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
-    public static <S> S createService(Class<S> serviceClass,String Url) {
-        Retrofit.Builder builder =
-                new Retrofit.Builder()
-                        .baseUrl(Url)
-                        .addConverterFactory(GsonConverterFactory.create());
+    private static ArtistInfoApi instance;
 
-        Retrofit retrofit = builder.client(httpClient.build()).build();
-        return retrofit.create(serviceClass);
+    public static final String baseUrl = "http://studio1101.co.nf/";
+
+    public interface ArtistInfoApi {
+
+        @POST("test.php")
+        Call<Rebus> getAnswerTest(@Body ApiRequest2 apiRequest2);
     }
 
+    //@Field for POST Request
+
+    public static ArtistInfoApi getInstance() {
+        if (instance == null){
+            Retrofit retrofit = new Retrofit.Builder()
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .baseUrl(baseUrl)
+                    .build();
+            instance = retrofit.create(ArtistInfoApi.class);
+            return instance;
+        }
+        return instance;
+    }
 }
-/*
-            //добавим интерсептор, чтобы повысить уровень логирования и отдебажить запросы
-            .addInterceptor(new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY));*/
