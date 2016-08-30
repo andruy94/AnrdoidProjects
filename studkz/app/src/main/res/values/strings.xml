@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Stud.kz - Найти Реферат!</string>
+    <string name="search_button_name">Найти!</string>
+    <string name="search_hint">Введите тему реферата</string>
+    <string name="language_settings_button">Язык</string>
+    <string name="Rus">ru</string>
+    <string name="Kz">kz</string>
+</resources>
